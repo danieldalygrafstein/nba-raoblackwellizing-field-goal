@@ -38,13 +38,28 @@ transformed_tracking_data_list = list(nrow(tracking_data))
 
 pb <- txtProgressBar(min = 0, max = nrow(tracking_data), style = 3)
 
-for (i in 1:nrow(data)) {
-  # Loop progress bar
+for (i in 1:nrow(tracking_data)) {
+  #Progress bar
   setTxtProgressBar(pb, i)
-  transformed_tracking_data_list[[i]] = as.matrix(convert_row(data[i,]))
+  transformed_tracking_data_list[[i]] = as.matrix(convert_row(tracking_data[i,]))
 }
 
-transformed_tracking_data = as.data.frame(do.call(rbind, transformed_tracking_data_list))
+transformed_tracking_data = do.call(rbind, transformed_tracking_data_list)
+
+# Unlist the columns of moment_data and create a data frame
+game = unlist(transformed_tracking_data[,1])
+quarter = unlist(transformed_tracking_data[,2])
+time = unlist(transformed_tracking_data[,3])
+shot_clock = unlist(transformed_tracking_data[,4])
+game_clock = unlist(transformed_tracking_data[,5])
+team = unlist(transformed_tracking_data[,6])
+entity = unlist(transformed_tracking_data[,7])
+x = unlist(transformed_tracking_data[,8])
+y = unlist(transformed_tracking_data[,9])
+z = unlist(transformed_tracking_data[,10])
+event_id = unlist(transformed_tracking_data[,11])
+
+transformed_tracking_data = data.frame(game, quarter, time, shot_clock, game_clock, team, entity, x, y, z, event_id)
 
 save(transformed_tracking_data, file='transformed_tracking_data.RData')
 
