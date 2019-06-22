@@ -67,7 +67,7 @@ for(tm in time_of_threes$time){
   
   ball.release <- ball.start.end[[1]]
   ball.basket <- ball.start.end[[2]]
-  linear.coefficients=ball.start.end[[3]]
+  linear.coefficients <- ball.start.end[[3]]
   
   
   #adjust the front of the room to the perspective of the player
