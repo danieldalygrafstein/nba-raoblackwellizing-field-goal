@@ -1,6 +1,7 @@
 # nba-raoblackwellizing-field-goal
 
-Selected code for the article "Rao-Blackwellizing Field Goal Percentage" published in the Journal of Quantitative Analysis in Sports. 
+Selected code for the article "Rao-Blackwellizing Field Goal Percentage" published in the  [Journal of Quantitative Analysis in Sports](https://www.degruyter.com/view/j/jqas.2019.15.issue-2/jqas-2018-0064/jqas-2018-0064.xml)
+. 
 
 This repo includes code to extract shot trajectories from tracking data, model shot trajectories using linear and Bayesian regression models, and calculate the depth, left-right distance, and entry angle of shots. It uses the publicly available tracking data, found [here](https://github.com/dcervone/EPVDemo/blob/master/data/2013_11_01_MIA_BKN.csv), as an example.
 
